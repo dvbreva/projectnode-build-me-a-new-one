@@ -5,22 +5,27 @@ const testing = require('./testing/script');
 
 testing.createSimpleWebProject('project', (data) => {
 
+    const inArgumentIndex = process.argv.indexOf('-in');
+    var inArgumentContent = '_system_download_';
+    if (process.argv.indexOf('-in') != '-1') {
+        inArgumentContent = process.argv[inArgumentIndex + 1];
+    }
 
-    fs.mkdirSync(`firstProject/${data[0].id}`, {
+    fs.mkdirSync(`${inArgumentContent}/${data[0].id}`, {
         recursive: true
     });
 
-    fs.writeFile(`firstProject/${data[0].id}/script.js`, ' ', function (err) {
+    fs.writeFile(`${inArgumentContent}/${data[0].id}/script.js`, ' ', function (err) {
         if (err) throw err;
         console.log('Saved the js file!');
     });
 
-    fs.writeFile(`firstProject/${data[0].id}/index.html`, ' some html code ', function (err) {
+    fs.writeFile(`${inArgumentContent}/${data[0].id}/index.html`, ' some html code ', function (err) {
         if (err) throw err;
         console.log('Saved the html file!');
     });
 
-    fs.writeFile(`firstProject/${data[0].id}/style.css`, ' some css code here ', function (err) {
+    fs.writeFile(`${inArgumentContent}/${data[0].id}/style.css`, ' some css code here ', function (err) {
         if (err) throw err;
         console.log('Saved the css file!');
     });
