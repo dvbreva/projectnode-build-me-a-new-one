@@ -1,0 +1,29 @@
+[
+    {
+        "id": "sample-web-project",
+        "files": {
+            "_": [
+                "index.html",
+                "script.js",
+                "style.css"
+            ]
+        }
+    },
+
+    {
+        "id": "bootstrap-project",
+        "files": {
+            "_": [
+                "index.html"
+            ],
+            "style": [
+                "@bootstrap",
+                "style.css"
+            ],
+            "scripts": [
+                "@jquery",
+                "script.js"
+            ]
+        }
+    }
+]
