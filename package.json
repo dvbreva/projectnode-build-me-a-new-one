@@ -9,7 +9,7 @@
   "author": "dd",
   "license": "ISC",
   "bin": {
-    "htmlScript": "./htmlScript.js",
-    "bootstrapScript": "./bootstrapScript.js"
+    "build-me-a-new-html-one": "./htmlScript.js",
+    "build-me-a-bootstrap-one": "./bootstrapScript.js"
   }
 }

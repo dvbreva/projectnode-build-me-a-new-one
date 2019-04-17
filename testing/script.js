@@ -3,8 +3,8 @@ const fs = require('fs');
 var moduleReference = {};
 
 moduleReference.testMethod = () => {
-    console.log('hello from my test method okay');
-    console.log('i finally made this work');
+    console.log('\nWelcome to my scaffolding mechanism! You may create two type of projects:\n');
+    console.log('node build-me-a-new-html-one -in any-desired-folder-name" to build a simple web project \n"node build-me-a-bootstrap-one -in any-desired-folder-name" to build a little bit more complex project with bootstrap and jquery libraries imported.\n');
 };
 
 moduleReference.createSimpleWebProject = (handler, callback) => {
@@ -21,7 +21,7 @@ moduleReference.createBootstrapProject = (handler, callback) => {
     callback(responseObject);
 };
 
-moduleReference.getInfoForLibraries = (handler, callback) => {
+moduleReference.getInfoFromLibraries = (handler, callback) => {
     var fileBuffer = fs.readFileSync('./librariesApi.json');
     var fileString = fileBuffer.toString();
     var responseObject = JSON.parse(fileString);
