@@ -4,7 +4,6 @@ const testing = require('./testing/script');
 var indexHtmlCode = fs.readFileSync('./templates/simple-web-project/htmlProjectIndex.txt').toString();
 var indexStyleCode = fs.readFileSync('./templates/simple-web-project/htmlProjectStyle.txt').toString();
 
-
 testing.createSimpleWebProject('project', (data) => {
 
     const inArgumentIndex = process.argv.indexOf('-in');
@@ -13,10 +12,12 @@ testing.createSimpleWebProject('project', (data) => {
         inArgumentContent = process.argv[inArgumentIndex + 1];
     }
 
+    // creating a folder named with the "id" of the project
     fs.mkdirSync(`${inArgumentContent}/${data[0].id}`, {
         recursive: true
     });
 
+    // adding files to it 
     fs.writeFile(`${inArgumentContent}/${data[0].id}/script.js`, ' ', function (err) {
         if (err) throw err;
         console.log('Added the js file successfully.');
@@ -32,33 +33,4 @@ testing.createSimpleWebProject('project', (data) => {
         console.log('Added the css file successfully.');
     });
 
-
-
-
-/*
-    //taka pravq 2te papki koito mi se kazvat s id-to
-    for (var element in data) {
-        fs.mkdirSync(`html/${data[element].id}`, {
-            recursive: true
-        });
-    }
-
-    // taka mi se suzdavat file-ovete v papkite
-    for(var item in data) {
-        fs.writeFile(`html/${data[item].id}/script.js`, ' ', function (err) {
-            if (err) throw err;
-            console.log('Saved the js file!');
-        });
-
-        fs.writeFile(`html/${data[item].id}/index.html`, ' some html code ', function (err) {
-            if (err) throw err;
-            console.log('Saved the html file!');
-        });
-
-        fs.writeFile(`html/${data[item].id}/style.css`, ' some css code here ', function (err) {
-            if (err) throw err;
-            console.log('Saved the css file!');
-        });
-    }
-    */
 });

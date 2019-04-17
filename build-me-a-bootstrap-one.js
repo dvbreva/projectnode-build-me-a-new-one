@@ -13,7 +13,6 @@ testing.createBootstrapProject('project', (data) => {
         inArgumentContent = process.argv[inArgumentIndex + 1];
     }
 
-
     //first folder
     fs.mkdirSync(`${inArgumentContent}/${data[1].id}`, {
         recursive: true
@@ -31,28 +30,16 @@ testing.createBootstrapProject('project', (data) => {
         recursive: true
     });
 
-    /*  fs.mkdirSync(`${inArgumentContent}/${data[1].id}/${(Object.getOwnPropertyNames(data[1]['files']))[1]}/${data[1]['files']['style'][0]}`, {
-          recursive: true
-      }); */
-
     //adding files to second folder
     fs.writeFile(`${inArgumentContent}/${data[1].id}/${(Object.getOwnPropertyNames(data[1]['files']))[1]}/style.css`, styleCssCode, function (err) {
         if (err) throw err;
         console.log('Added the style file successfully.');
     });
 
-
-
     //third folder + jquery folder
     fs.mkdirSync(`${inArgumentContent}/${data[1].id}/${(Object.getOwnPropertyNames(data[1]['files']))[2]}`, {
         recursive: true
     });
-
-    /*
-    fs.mkdirSync(`${inArgumentContent}/${data[1].id}/${(Object.getOwnPropertyNames(data[1]['files']))[2]}/${data[1]['files']['scripts'][0]}`, {
-        recursive: true
-    });
-    */
 
     //adding files to third folder
     fs.writeFile(`${inArgumentContent}/${data[1].id}/${(Object.getOwnPropertyNames(data[1]['files']))[2]}/script.js`, ' some js code ', function (err) {
@@ -71,8 +58,6 @@ testing.getInfoFromLibraries('project', (data2) => {
     }
 
     //cloning the bootstrap and the jquery libraries' info
-
-    //  fs.mkdirSync(`projects/${data[element].name}`, {recursive:true});
     cp.exec(`git clone ${data2[0].html_url} ${inArgumentContent}/bootstrap-project/style/${data2[0].name}`);
     cp.exec(`git clone ${data2[1].html_url} ${inArgumentContent}/bootstrap-project/scripts/${data2[1].name}`);
 
