@@ -21,6 +21,13 @@ moduleReference.createBootstrapProject = (handler, callback) => {
     callback(responseObject);
 };
 
+moduleReference.createSimpleNodeProject = (handler, callback) => {
+    var fileBuffer = fs.readFileSync('./projectsApi.json');
+    var fileString = fileBuffer.toString();
+    var responseObject = JSON.parse(fileString);
+    callback(responseObject);
+};
+
 moduleReference.getInfoFromLibraries = (handler, callback) => {
     var fileBuffer = fs.readFileSync('./librariesApi.json');
     var fileString = fileBuffer.toString();

@@ -1,0 +1,19 @@
+const http = require('http');
+const fs = require('fs');
+const PORT = 3000; 
+
+
+const server = http.createServer(function (request, response) {
+
+var indexHtmlCode = fs.readFileSync('./index.html').toString();
+
+    response.writeHead(300, {
+        'content-type': 'text/html'
+    });
+    response.write(indexHtmlCode);
+    
+    response.end(); 
+});
+
+server.listen(PORT); 
+console.log(`Server started on port: ${PORT}`); 

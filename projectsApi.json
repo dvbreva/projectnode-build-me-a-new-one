@@ -25,5 +25,16 @@
                 "script.js"
             ]
         }
+    }, 
+
+    {
+        "id": "node-project",
+        "files": {
+            "_": [
+                "index.html",
+                "style.css",
+                "index.js"
+            ]
+        }
     }
 ]
