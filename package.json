@@ -10,6 +10,7 @@
   "license": "ISC",
   "bin": {
     "build-me-a-new-html-one": "./htmlScript.js",
-    "build-me-a-bootstrap-one": "./bootstrapScript.js"
+    "build-me-a-bootstrap-one": "./bootstrapScript.js",
+    "build-me-a-node-one": "./build-me-a-new-one.js"
   }
 }
