@@ -7,7 +7,7 @@ If you'd like to get a welcoming message with script you can run
 ```
 node entryScript
 ```  
-Other than that you have 2 options:  
+Other than that you have 3 options:  
 ```
 node build-me-a-new-html-one -in folder-name
 ```  
