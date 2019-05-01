@@ -15,4 +15,9 @@ will generate you files needed for a basic html website in a folder with a desir
 ```
 node build-me-a-bootstrap-one -in folder-name
 ```  
-will generate you a more complex project with libraries such as jQuery and Bootstrap.
+will generate you a more complex project with libraries such as jQuery and Bootstrap.  
+```
+node build-me-a-node-one -in folder-name
+```  
+will generate you a simple node js app. You need to navigate to the folder you have decided to create the files in and additionaly run
+index.js file to start your server
